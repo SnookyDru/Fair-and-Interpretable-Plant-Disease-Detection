@@ -1,0 +1,60 @@
+Inference output:
+
+Using device: cpu
+------------------------------------------------
+Loading RGB and HSI images...
+------------------------------------------------
+Loaded 32 RGB images and 32 HSI cubes.
+Converting RGB and HSI images from HWC to BHW dimension order...
+------------------------------------------------
+Creating DataLoader...
+------------------------------------------------
+Created DataLoader with 32 samples, batch size 1, num workers 0.
+Fitting Gamma distribution to HSI data...
+------------------------------------------------
+[fit_gamma_fullcube] Normalized values by 255.0 (max before scale = 247.00).
+[fit_gamma_fullcube] Subsampled from 242601540 -> 5000 voxels for fitting.
+[fit_gamma_fullcube] Fitted params: {'a': 0.5991445434869039, 'loc': 0.0, 'scale': 0.19113133109948804}        
+Generating synthetic Gamma-modeled hyperspectral cube...
+------------------------------------------------
+Gamma-modeled cube shape: (31, 512, 512)
+Min/Max: 0.0 1.0
+[fit_gamma_fullcube] Normalized values by 255.0 (max before scale = 247.00).
+[fit_gamma_fullcube] Subsampled from 242601540 -> 5000 voxels for fitting.
+[fit_gamma_fullcube] Fitted params: {'a': 0.5991445434869039, 'loc': 0.0, 'scale': 0.19113133109948804}        
+Generating synthetic Gamma-modeled hyperspectral cube...
+------------------------------------------------
+Gamma-modeled cube shape: (31, 512, 512)
+Min/Max: 0.0 1.0
+[fit_gamma_fullcube] Fitted params: {'a': 0.5991445434869039, 'loc': 0.0, 'scale': 0.19113133109948804}        
+Generating synthetic Gamma-modeled hyperspectral cube...
+------------------------------------------------
+Gamma-modeled cube shape: (31, 512, 512)
+Min/Max: 0.0 1.0
+Generating synthetic Gamma-modeled hyperspectral cube...
+------------------------------------------------
+Gamma-modeled cube shape: (31, 512, 512)
+Min/Max: 0.0 1.0
+Gamma-modeled cube shape: (31, 512, 512)
+Min/Max: 0.0 1.0
+Min/Max: 0.0 1.0
+Applying mask to the Gamma-modeled hyperspectral cube...
+Applying mask to the Gamma-modeled hyperspectral cube...
+------------------------------------------------
+Masked cube shape: torch.Size([31, 512, 512])
+Mask shape: torch.Size([31, 512, 512])
+Non-zero points in mask: 806.0
+RGB batch shape: torch.Size([1, 3, 512, 512])
+HSI batch shape: torch.Size([1, 31, 512, 512])
+Creating PixelSSR model...
+------------------------------------------------
+Running PixelSSR model...
+Running PixelSSR model...
+------------------------------------------------
+PixelSSR forward pass took: 47.79 seconds
+RGB to HSI conversion via PixelSSR completed
+------------------------------------------------
+Output shape of Yr (HSI): torch.Size([1, 31, 512, 512])
+Total runtime of the whole script: 76.95 seconds
+Saving 31 spectral bands to 'output_hsi_bands'
+Saved all bands as grayscale PNGs.
